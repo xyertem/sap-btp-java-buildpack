@@ -1,0 +1,12 @@
+applications:
+- name: demojava
+  random-route: true
+  path: ./target/demojava-0.0.1-SNAPSHOT.jar
+  memory: 256M
+  buildpacks:
+    - sap_java_buildpack_1_76
+  env:
+    TARGET_RUNTIME: tomcat
+    JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+    JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 17.+ }"
+
