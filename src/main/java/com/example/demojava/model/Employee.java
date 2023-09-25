@@ -1,7 +1,10 @@
 package com.example.demojava.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Optional;
 
 @Document("employees")
 public class Employee {
@@ -12,6 +15,9 @@ public class Employee {
 
     private String lastname;
 
+    @DBRef
+    private Company company;
+
     public Employee() { //Default consroctor
     }
 
@@ -19,6 +25,11 @@ public class Employee {
         this.name = name;
         this.lastname = lastname;
     }
+
+
+    public Company getCompany() { return company; }
+
+    public void setCompany(Company company) { this.company = company; }
 
     public String getId() {
         return id;
