@@ -9,4 +9,23 @@ applications:
     TARGET_RUNTIME: tomcat
     JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
     JBP_CONFIG_SAP_MACHINE_JDK: "{ version: 17.+ }"
+  services:
+    - javauaa
+- name: wwwroot
+  random-route: true
+  path: wwwroot
+  memory: 1024M
+  buildpacks:
+    - nodejs_buildpack
+  env:
+    destinations: >
+      [
+        {
+          "name":"demojava",
+          "url":"https://demojava-restless-baboon-wk.cfapps.us10-001.hana.ondemand.com",
+          "forwardAuthToken": true
+        }
+      ]
+  services:
+    - javauaa
 
