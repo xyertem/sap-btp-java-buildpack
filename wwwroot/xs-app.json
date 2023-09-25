@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {
+      "source": "^/demojava/(.*)$",
+      "target": "$1",
+      "destination": "demojava"
+    }
+  ]
+}

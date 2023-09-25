@@ -1,14 +1,18 @@
 {
-  "name": "web",
+  "name": "wwwroot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-      "start": "node node_modules/@sap/approuter/approuter.js"
+    "start": "node node_modules/@sap/approuter/approuter.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@sap/approuter": "^14.3.2"
+  },
+  "engines": {
+    "node": "18.16.1",
+    "npm": "9.5.1"
   }
 }
