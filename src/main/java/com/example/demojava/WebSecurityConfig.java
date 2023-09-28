@@ -10,12 +10,13 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-
+@EnableWebSecurity(debug = true)
 public class WebSecurityConfig {
 
     @Autowired
@@ -29,7 +30,7 @@ public class WebSecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
-                .requestMatchers("/**").authenticated()
+                                .requestMatchers("/**").authenticated()
                                 .anyRequest().denyAll() // deny anything not configured above
                                 .and()
                                 .oauth2ResourceServer().jwt()
