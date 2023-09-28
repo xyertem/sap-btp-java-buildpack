@@ -2,7 +2,7 @@ applications:
 - name: demojava
   random-route: true
   path: ./target/demojava-0.0.1-SNAPSHOT.jar
-  memory: 256M
+  memory: 1024M
   buildpacks:
     - sap_java_buildpack_1_76
   env:
@@ -14,7 +14,7 @@ applications:
 - name: wwwroot
   random-route: true
   path: wwwroot
-  memory: 1024M
+  memory: 256M
   buildpacks:
     - nodejs_buildpack
   env:
