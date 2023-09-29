@@ -4,11 +4,11 @@ public class CompanyRequest {
 
     private final String companyName;
 
-    private final String Adress;
+    private final String adress;
 
     public CompanyRequest(String companyName, String adress) {
         this.companyName = companyName;
-        Adress = adress;
+        this.adress = adress;
     }
 
     public String getCompanyName() {
@@ -16,6 +16,6 @@ public class CompanyRequest {
     }
 
     public String getAdress() {
-        return Adress;
+        return adress;
     }
 }

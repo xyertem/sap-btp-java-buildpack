@@ -4,16 +4,25 @@ import com.example.demojava.model.Company;
 
 public class EmployeeRequest {
 
-    private final String name;
+    private  String employeeId;
+    private  String name;
 
-    private final String lastname;
+    private  String lastname;
 
-    private final String companyId;
+    private  String companyId;
+
+    public EmployeeRequest(String employeeId) {
+        this.employeeId = employeeId;
+    }
 
     public EmployeeRequest(String name, String lastname, String companyId) {
         this.name = name;
         this.lastname = lastname;
         this.companyId = companyId;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
     }
 
     public String getCompanyId() { return companyId; }
