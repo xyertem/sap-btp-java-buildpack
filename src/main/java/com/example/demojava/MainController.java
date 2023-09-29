@@ -1,4 +1,4 @@
-package com.example.demojava.controller;
+package com.example.demojava;
 import com.example.demojava.NotAuthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
