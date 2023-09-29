@@ -8,7 +8,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.web.filter.GenericFilterBean;
@@ -31,7 +30,6 @@ public class JwtTroublefilter extends GenericFilterBean {
             System.out.println("Authorization header not found!!");
             return;
         }
-
 
 
         JwtDecoder jwtDecoder = new XsuaaJwtDecoderBuilder(xsuaaServiceConfiguration_).withoutXsuaaAudienceValidator().build();
