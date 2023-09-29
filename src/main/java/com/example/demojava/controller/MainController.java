@@ -1,4 +1,5 @@
-package com.example.demojava;
+package com.example.demojava.controller;
+import com.example.demojava.NotAuthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,7 +11,6 @@ import com.sap.cloud.security.xsuaa.token.Token;
 
 @RestController
 @RequestMapping(path = "")
-
 public class MainController {
 
     @GetMapping(path = "")
