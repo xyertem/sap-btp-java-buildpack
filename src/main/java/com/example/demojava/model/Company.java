@@ -3,8 +3,15 @@ package com.example.demojava.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-@Document("companies")
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
+
+@Entity
+@Table(name="Company", schema = "DEMOJAVA")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Company {
 
     @Id

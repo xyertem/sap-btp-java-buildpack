@@ -1,21 +1,33 @@
 package com.example.demojava.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+//presistance
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
-@Document("employees")
+
+@Entity
+@Table(name="Employee", schema = "DEMOJAVA")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Employee {
     @Id
     private String id;
 
+    @NotNull
+    @Column(name= "name")
     private String name;
-
+    @NotNull
+    @Column(name = "lastName")
     private String lastname;
 
-    @DBRef
+    @OneToOne
+    @JoinColumn(name = "Company" , referencedColumnName = "id", nullable = false)
     private Company company;
 
     public Employee() { //Default consroctor
