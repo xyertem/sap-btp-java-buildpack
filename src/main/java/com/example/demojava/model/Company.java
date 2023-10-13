@@ -17,8 +17,12 @@ public class Company {
     @Id
     private String id;
 
+    @NotNull
+    @Column(name= "companyName")
     private String companyName;
 
+    @NotNull
+    @Column(name= "adress")
     private String adress;
 
     public Company() {
