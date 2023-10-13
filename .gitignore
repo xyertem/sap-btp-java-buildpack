@@ -6,6 +6,8 @@ target/
 wwwroot/node_modules/
 
 src/main/resources/application.properties
+src/main/resources/application.yml
+
 ### STS ###
 .apt_generated
 .classpath
